@@ -15,11 +15,16 @@ namespace B3.Domain
             for (int i = 1; i < numberMonths; i++)
                 totalValue = CalculateCdbYield(totalValue, cdiRate, tb);
 
-            var returnAmount = initialvalue - totalValue;
+            totalValue = Math.Round(totalValue, 2);
+
+            var returnAmount = totalValue - initialvalue;
+            returnAmount = Math.Round(returnAmount, 2);
 
             var incomeTaxAmount = returnAmount * GetTaxRateValue(numberMonths);
+            incomeTaxAmount = Math.Round(incomeTaxAmount, 2);
 
             var netAmount = totalValue - incomeTaxAmount;
+            netAmount = Math.Round(netAmount,2);
 
             return new FixedIncomeCalculationResultDTO(totalValue, netAmount,
                 returnAmount, incomeTaxAmount);

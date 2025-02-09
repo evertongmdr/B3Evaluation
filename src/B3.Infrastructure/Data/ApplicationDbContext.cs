@@ -14,7 +14,9 @@ namespace B3.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             SeedDatabase(modelBuilder);
+
             base.OnModelCreating(modelBuilder);
         }
 

@@ -1,5 +1,6 @@
 ﻿using B3.Application.Interfaces;
 using B3.Application.Services;
+using B3.Common.Errors;
 using B3.Domain.Interfaces.Repositories;
 using B3.Infrastructure.Data;
 using B3.Infrastructure.Data.Repositories;
@@ -13,6 +14,7 @@ namespace B3.API.Configuration
         {
             services.AddScoped<ApplicationDbContext>();
 
+            services.AddScoped<NotificationContext>();
 
             #region Repositories
 
