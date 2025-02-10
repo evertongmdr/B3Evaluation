@@ -16,7 +16,7 @@ namespace B3.Common.API
 
         protected bool OperacaoValida()
         {
-            return !_notificationContext.TemNotificacoes;
+            return !_notificationContext.ExistNotifications;
         }
 
         protected ActionResult SuccessResponse(HttpStatusCode statusCode)
@@ -45,7 +45,7 @@ namespace B3.Common.API
         protected ActionResult ErroResponse(ValidationResult? validationResult = null)
         {
             if (validationResult != null)
-                _notificationContext.AddNotificacoes(validationResult);
+                _notificationContext.AddNotifications(validationResult);
 
             var codigoErro = (int)_notificationContext.Notifications.Select(n => n.ErroCode).First();
 

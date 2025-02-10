@@ -30,7 +30,7 @@ namespace B3.Application.Services
 
             if (bank == null)
             {
-                _notificationContext.AddNotificacao($"Banco não encontrado, {defaultErrorMessage}", HttpStatusCode.NotFound);
+                _notificationContext.AddNotification($"Banco não encontrado, {defaultErrorMessage}", HttpStatusCode.NotFound);
 
                 return null;
             }
@@ -40,7 +40,7 @@ namespace B3.Application.Services
 
             if (financialProduct == null)
             {
-                _notificationContext.AddNotificacao($"Produto financeiro de investimento não encontrado, " +
+                _notificationContext.AddNotification($"Produto financeiro de investimento não encontrado, " +
                     $"{defaultErrorMessage}", HttpStatusCode.NotFound);
 
                 return null;
@@ -59,8 +59,8 @@ namespace B3.Application.Services
                     break;
 
                 default:
-                    _notificationContext.AddNotificacao($"Produto financeiro de investimento " +
-                        $"não esta mapeado em nosso sistema, {defaultErrorMessage}", HttpStatusCode.NotFound);
+                    _notificationContext.AddNotification($"Produto financeiro de investimento " +
+                        $"não está mapeado em nosso sistema, {defaultErrorMessage}", HttpStatusCode.NotFound);
 
                     return null;
 

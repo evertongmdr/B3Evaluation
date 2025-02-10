@@ -3,6 +3,7 @@
     public enum FinancialProductType
     {
         CDB = 3,
-        LCI = 6
+        LCI = 6,
+        LCA = 9
     }
 }
