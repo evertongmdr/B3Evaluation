@@ -1,5 +1,4 @@
-﻿using B3.Application.DTOs;
-using B3.Application.DTOs.Validators;
+﻿using B3.Application.Validators;
 using B3.Domain.DTOs;
 
 namespace B3.Tests.Application.Validations
@@ -22,7 +21,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.Empty,
                 InitialValue = 1000,
-                investmentDuration = 12
+                InvestmentDuration = 12
 
             };
 
@@ -47,7 +46,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 0,
-                investmentDuration = 12
+                InvestmentDuration = 12
             };
 
             //Act
@@ -71,7 +70,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 1000,
-                investmentDuration = 0
+                InvestmentDuration = 0
             };
 
             //Act
@@ -95,7 +94,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 1000,
-                investmentDuration = 12
+                InvestmentDuration = 12
             };
 
             //Act

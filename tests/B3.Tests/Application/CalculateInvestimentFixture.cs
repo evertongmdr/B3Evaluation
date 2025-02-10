@@ -15,8 +15,8 @@ namespace B3.Tests.Application
                 BankId = Guid.NewGuid(),
                 FinancialProductType = FinancialProductType.CDB,
                 InitialValue = 1000M,
-                investmentDuration = 12,
-                redemptionPeriod = 6,
+                InvestmentDuration = 12,
+                RedemptionPeriod = 6,
             };
         }
 
