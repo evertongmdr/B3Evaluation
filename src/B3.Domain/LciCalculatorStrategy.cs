@@ -1,6 +1,6 @@
-﻿using B3.Application.DTOs;
+﻿using B3.Domain.DTOs;
 
-namespace B3.Domain
+namespace B3.Domain.Models
 {
     public class LciCalculatorStrategy : IFixedIncomeCalculatorStrategy
     {

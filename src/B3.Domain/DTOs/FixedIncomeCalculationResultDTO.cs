@@ -1,4 +1,4 @@
-﻿namespace B3.Application.DTOs
+﻿namespace B3.Domain.DTOs
 {
     public class FixedIncomeCalculationResultDTO
     {

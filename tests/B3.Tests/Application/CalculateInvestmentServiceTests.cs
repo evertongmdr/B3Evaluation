@@ -1,8 +1,8 @@
 ﻿using B3.Application.Services;
 using B3.Common.Errors;
+using B3.Domain.Interfaces;
 using B3.Domain.Interfaces.Repositories;
 using B3.Domain.Models;
-using Microsoft.Extensions.DependencyModel;
 using Moq;
 using Moq.AutoMock;
 using System.Linq.Expressions;

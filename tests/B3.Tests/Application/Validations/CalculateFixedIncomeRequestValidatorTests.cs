@@ -1,5 +1,6 @@
 ﻿using B3.Application.DTOs;
 using B3.Application.DTOs.Validators;
+using B3.Domain.DTOs;
 
 namespace B3.Tests.Application.Validations
 {
@@ -20,7 +21,7 @@ namespace B3.Tests.Application.Validations
             var calculateFixedIncomeRequest = new CalculateFixedIncomeRequestDTO
             {
                 BankId = Guid.Empty,
-                InitialVaue = 1000,
+                InitialValue = 1000,
                 investmentDuration = 12
 
             };
@@ -45,7 +46,7 @@ namespace B3.Tests.Application.Validations
             var calculateFixedIncomeRequest = new CalculateFixedIncomeRequestDTO
             {
                 BankId = Guid.NewGuid(),
-                InitialVaue = 0,
+                InitialValue = 0,
                 investmentDuration = 12
             };
 
@@ -69,7 +70,7 @@ namespace B3.Tests.Application.Validations
             var calculateFixedIncomeRequest = new CalculateFixedIncomeRequestDTO
             {
                 BankId = Guid.NewGuid(),
-                InitialVaue = 1000,
+                InitialValue = 1000,
                 investmentDuration = 0
             };
 
@@ -93,7 +94,7 @@ namespace B3.Tests.Application.Validations
             var calculateFixedIncomeRequest = new CalculateFixedIncomeRequestDTO
             {
                 BankId = Guid.NewGuid(),
-                InitialVaue = 1000,
+                InitialValue = 1000,
                 investmentDuration = 12
             };
 

@@ -1,6 +1,7 @@
-﻿using FluentValidation;
+﻿using B3.Domain.DTOs;
+using FluentValidation;
 
-namespace B3.Application.DTOs.Validators
+namespace B3.Application.Validators
 {
     public class CalculateFixedIncomeRequestValidator : AbstractValidator<CalculateFixedIncomeRequestDTO>
     {
@@ -10,7 +11,7 @@ namespace B3.Application.DTOs.Validators
             RuleFor(b => b.BankId)
              .NotEmpty().WithMessage("O identificador do banco deve ser informado");
 
-            RuleFor(x => x.InitialVaue).GreaterThan(0)
+            RuleFor(x => x.InitialValue).GreaterThan(0)
                 .WithMessage("O valor inicial deve ser maior que zero");
 
             RuleFor(x => x.investmentDuration).GreaterThan(1)

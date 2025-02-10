@@ -1,4 +1,4 @@
-﻿using B3.Application.DTOs;
+﻿using B3.Domain.DTOs;
 using B3.Domain.Models;
 
 namespace B3.Tests.Application
@@ -14,7 +14,7 @@ namespace B3.Tests.Application
             {
                 BankId = Guid.NewGuid(),
                 FinancialProductType = FinancialProductType.CDB,
-                InitialVaue = 1000M,
+                InitialValue = 1000M,
                 investmentDuration = 12,
                 redemptionPeriod = 6,
             };

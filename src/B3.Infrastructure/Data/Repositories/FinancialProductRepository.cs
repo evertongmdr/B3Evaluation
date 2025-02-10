@@ -1,4 +1,4 @@
-﻿using B3.Domain.Interfaces.Repositories;
+﻿using B3.Domain.Interfaces;
 using B3.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;

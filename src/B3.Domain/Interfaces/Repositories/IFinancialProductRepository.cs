@@ -1,7 +1,7 @@
 ﻿using B3.Domain.Models;
 using System.Linq.Expressions;
 
-namespace B3.Domain.Interfaces.Repositories
+namespace B3.Domain.Interfaces
 {
     public interface IFinancialProductRepository
     {

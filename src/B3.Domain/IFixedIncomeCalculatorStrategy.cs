@@ -1,16 +1,16 @@
-﻿using B3.Application.DTOs;
+﻿using B3.Domain.DTOs;
 
-namespace B3.Domain
+namespace B3.Domain.Models
 {
+
     /// <summary>
-    /// ICalculadoraRendaFixa, Define uma estratégia para calcular o rendimento de investimentos em renda fixa.
+    /// Define a estratégia para cálculo de investimentos em renda fixa.
     /// </summary>
-    public interface IFixedIncomeCalculatorStrategy // =>ICalculadoraRendaFixa
+    public interface IFixedIncomeCalculatorStrategy
     {
         /// <summary>
-        /// Calcula o rendimento de um investimento em renda fixa.
+        /// Calcula os detalhes financeiros do investimento em renda fixa.
         /// </summary>
-        /// <param name="initialValue">O valor inicial investido.</param>
-        FixedIncomeCalculationResultDTO CalculateFinancialDetails(decimal initialvalue, decimal cdiRate, decimal tb, int numberMonths);
+        FixedIncomeCalculationResultDTO CalculateFinancialDetails(decimal initialValue, decimal cdiRate, decimal tb, int numberMonths);
     }
 }

@@ -1,4 +1,5 @@
-﻿using B3.Domain.Models;
+﻿using B3.Domain.Interfaces;
+using B3.Domain.Models;
 
 namespace B3.Domain.Interfaces.Repositories
 {

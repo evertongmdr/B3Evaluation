@@ -1,9 +1,8 @@
-﻿
-using B3.Application.DTOs;
-using B3.Application.Interfaces;
+﻿using B3.Application.Interfaces;
 using B3.Common.Domain;
 using B3.Common.Errors;
-using B3.Domain;
+using B3.Domain.DTOs;
+using B3.Domain.Interfaces;
 using B3.Domain.Interfaces.Repositories;
 using B3.Domain.Models;
 using System.Net;
@@ -66,8 +65,8 @@ namespace B3.Application.Services
 
             }
 
-            var calculateFinancialResult = fixedIncomeCalculatorStrategy.CalculateFinancialDetails(request.InitialVaue,
-                financialProduct.BaseRate, financialProduct.TB, request.investmentDuration);
+            var calculateFinancialResult = fixedIncomeCalculatorStrategy.CalculateFinancialDetails(request.InitialValue,
+                financialProduct.BaseRate, financialProduct.TB, request.InvestmentDuration);
 
             return calculateFinancialResult;
 

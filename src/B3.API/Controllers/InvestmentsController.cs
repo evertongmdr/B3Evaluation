@@ -1,8 +1,8 @@
-﻿using B3.Application.DTOs;
-using B3.Application.DTOs.Validators;
-using B3.Application.Interfaces;
+﻿using B3.Application.Interfaces;
+using B3.Application.Validators;
 using B3.Common.API;
 using B3.Common.Errors;
+using B3.Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -16,7 +16,6 @@ namespace B3.API.Controllers
         {
             _calculateInvestmentService = calculateInvestmentService;
         }
-
 
         [HttpPost("calculate-fixed-income")]
         [ProducesResponseType(typeof(ApiResponseWithData<FixedIncomeCalculationResultDTO>), StatusCodes.Status200OK)]

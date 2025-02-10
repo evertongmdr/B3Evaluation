@@ -10,12 +10,11 @@ namespace B3.Tests.Domain
     public class CdbCalculatorStrategyTests
     {
 
-
         [Theory(DisplayName = "Teste que verifica se, o cálculo de investimento de renda fixa retorna os valores corretos")]
         [InlineData(1000, 0.009, 1.08, 12, 1)]
         [InlineData(1234, 0.009, 1.08, 24, 2)]
         [InlineData(1000.15, 0.009, 1.08, 25, 3)]
-        public async Task CdbCalculatorStrategy_InputValid_ReturnsCorrectValue(decimal initialvalue, decimal cdiRate,
+        public void CdbCalculatorStrategy_InputValid_ReturnsCorrectValue(decimal initialvalue, decimal cdiRate,
             decimal tb, int numberMonths, int numberTest)
         {
             //Arrange
