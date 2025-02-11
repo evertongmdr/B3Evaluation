@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "B3.API": {
+    "SelfHosting": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
