@@ -1,0 +1,117 @@
+<div class="container main-container py-4 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="pacman" [fullScreen]="true">
+        <p class="text-white">Processando...</p>
+    </ngx-spinner>
+
+    <div class="card shadow-lg p-4 w-100" style="max-width: 600px;">
+        <h3 class="text-center text-primary">Cálculo Investimento Renda Fixa</h3>
+        <hr class="divider">
+
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <form enctype="multipart/form-data" (ngSubmit)="calculeIvestiment()"
+                    [formGroup]="calculateFixedIncomeForm">
+
+                    <div *ngIf="errors.length > 0" class="alert alert-danger">
+                        <h4 class="text-danger">Opa! Alguma coisa não deu certo:</h4>
+                        <ul>
+                            <li *ngFor="let error of errors">{{ error }}</li>
+                        </ul>
+                    </div>
+
+                    <!-- Campos de Entrada -->
+                    <div class="form-group">
+                        <label class="control-label">Inicial Valor *</label>
+                        <div>
+                            <input class="form-control" id="initialValue" type="text" placeholder="Inicial Valor"
+                                formControlName="initialValue" (input)="formatCurrency($event)"
+                                [ngClass]="{'is-invalid': displayMessage['initialValue'] }" />
+                            <span class="text-danger" *ngIf="displayMessage['initialValue']">
+                                <p [innerHTML]="displayMessage['initialValue']"></p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Período de resgate *</label>
+                        <div>
+                            <input class="form-control" id="redemptionPeriod" type="number"
+                                placeholder="Período de resgate do investimento em meses"
+                                formControlName="redemptionPeriod"
+                                [ngClass]="{'is-invalid': displayMessage['redemptionPeriod'] }" />
+                            <span class="text-danger" *ngIf="displayMessage['redemptionPeriod']">
+                                <p [innerHTML]="displayMessage['redemptionPeriod']"></p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Duração total do investimento *</label>
+                        <div>
+                            <input class="form-control" id="investmentDuration" type="number"
+                                placeholder="Duração total do investimento em meses"
+                                formControlName="investmentDuration"
+                                [ngClass]="{'is-invalid': displayMessage['investmentDuration'] }" />
+                            <span class="text-danger" *ngIf="displayMessage['investmentDuration']">
+                                <p [innerHTML]="displayMessage['investmentDuration']"></p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Tipo de Produto Financeiro *</label>
+                        <div>
+                            <select class="form-control" formControlName="financialProductType">
+                                <option *ngFor="let product of financialProductTypes" [value]="product.value"
+                                    [disabled]="product.disabled">
+                                    {{ product.label }}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="displayMessage['financialProductType']">
+                                <p [innerHTML]="displayMessage['financialProductType']"></p>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showResults">
+                        <h4 class="text-center text-primary mt-4">Resultados</h4>
+                        <div class="form-group">
+                            <label class="control-label">Valor Bruto</label>
+                            <div>
+                                <input class="form-control" id="grossAmount" type="text"  disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Valor Líquido</label>
+                            <div>
+                                <input class="form-control" id="netAmount" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Valor Rendimento</label>
+                            <div>
+                                <input class="form-control" id="ReturnAmount" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Valor Imposto</label>
+                            <div>
+                                <input class="form-control" id="IncomeTaxAmount" type="text" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" id="cadastroProduto" [disabled]="!calculateFixedIncomeForm.valid"
+                            class="btn btn-primary px-4">Calcular</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

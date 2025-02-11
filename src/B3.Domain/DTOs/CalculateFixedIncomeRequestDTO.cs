@@ -23,7 +23,7 @@ namespace B3.Domain.DTOs
         public decimal InitialValue { get; set; }
 
         /// <summary>
-        /// Período de resgate do investimento em dias.
+        /// Período de resgate do investimento em meses.
         /// </summary>
         public int RedemptionPeriod { get; set; }
 
