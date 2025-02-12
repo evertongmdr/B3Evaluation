@@ -20,7 +20,6 @@
                         </ul>
                     </div>
 
-                    <!-- Campos de Entrada -->
                     <div class="form-group">
                         <label class="control-label">Inicial Valor *</label>
                         <div>
@@ -79,28 +78,32 @@
                         <div class="form-group">
                             <label class="control-label">Valor Bruto</label>
                             <div>
-                                <input class="form-control" id="grossAmount" type="text"  disabled>
+                                <input class="form-control" id="grossAmount" type="text"
+                                    [value]="calculationResultDisplay.grossAmount" disabled>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label">Valor Líquido</label>
                             <div>
-                                <input class="form-control" id="netAmount" type="text" disabled>
+                                <input class="form-control" id="netAmount" type="text"
+                                    [value]="calculationResultDisplay?.netAmount" disabled>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label">Valor Rendimento</label>
                             <div>
-                                <input class="form-control" id="ReturnAmount" type="text" disabled>
+                                <input class="form-control" id="ReturnAmount" type="text"
+                                    [value]="calculationResultDisplay?.returnAmount" disabled>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label">Valor Imposto</label>
                             <div>
-                                <input class="form-control" id="IncomeTaxAmount" type="text" readonly>
+                                <input class="form-control" id="IncomeTaxAmount" type="text"
+                                    [value]="calculationResultDisplay?.incomeTaxAmount" readonly>
                             </div>
                         </div>
                     </div>

@@ -7,9 +7,6 @@ import { FixedIncomeComponent } from './fixed-Income/fixed-income.component';
 import { CalculateInvestimentRoutingModule } from './calculate-investment.route';
 import { CalculateInvestmentAppComponent } from './calculate-investment.app.component';
 
-// import { ProdutoService } from './services/produto.service';
-
-
 @NgModule({
   declarations: [
     CalculateInvestmentAppComponent,
@@ -21,10 +18,9 @@ import { CalculateInvestmentAppComponent } from './calculate-investment.app.comp
     CalculateInvestimentRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule,
-  ],
+    NgxSpinnerModule
+],
   providers: [
-    // ProdutoService,
   ]
 })
 

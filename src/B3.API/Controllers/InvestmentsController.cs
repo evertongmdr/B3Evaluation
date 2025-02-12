@@ -8,6 +8,7 @@ using System.Net;
 
 namespace B3.API.Controllers
 {
+    [Route("investments")]
     public class InvestmentsController : MainController
     {
         private readonly ICalculateInvestmentService _calculateInvestmentService;
@@ -30,16 +31,16 @@ namespace B3.API.Controllers
 
             if (!validatorResult.IsValid)
                 return ErroResponse(validatorResult);
-            
+
             var calculeFixedIncomeResult = await _calculateInvestmentService.CalculateFixedIncomeAsync(request);
 
             if (OperacaoValida())
-                return SuccessResponseWithData(HttpStatusCode.OK , calculeFixedIncomeResult);
+                return SuccessResponseWithData(HttpStatusCode.OK, calculeFixedIncomeResult);
 
             return ErroResponse();
 
 
         }
-       
+
     }
 }
