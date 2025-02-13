@@ -130,8 +130,10 @@ export class FixedIncomeComponent extends FormBaseComponent {
 
               this.errors = []
 
-              if (!errorHttp.error.success) {
+              if (errorHttp?.error?.success === false) {
                 this.errors = errorHttp.error.errors;
+              } else {
+                this.errors = ['Ocorreu um erro inesperado no sistema, detalhes foram registrados.'];
               }
 
               this.showResults = false;
