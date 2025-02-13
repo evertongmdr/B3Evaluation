@@ -7,7 +7,7 @@ export class StringUtils {
         return false;
     };
 
-    public static somenteNumeros(numero: string): string {
+    public static onlyNumbers(numero: string): string {
         return numero.replace(/[^0-9]/g, '');
     }
 

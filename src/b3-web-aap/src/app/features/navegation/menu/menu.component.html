@@ -1,20 +1,25 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm">
         <div class="container">
-           
-            <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngbCollapse]="isCollapsed">
+            <a class="nav-link text-white fw-semibold" href="https://www.b3.com.br/pt_br/institucional">Banco B3</a>
 
-                <ul class="navbar-nav flex-grow-1">
+            <button class="navbar-toggler border-0" type="button" (click)="isCollapsed = !isCollapsed"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" [routerLink]="['/home']">Home</a>
+                        <a class="nav-link text-white fw-semibold" [routerLink]="['/home']">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" [routerLink]="['/calculate-investiment/fixed-income']">Cálculo Investimento</a>
+                        <a class="nav-link text-white fw-semibold"
+                            [routerLink]="['/calculate-investiment/fixed-income']"
+                            class="btn btn-primary text-white py-2 px-3 rounded-3 shadow-sm">
+                            Cálculo Investimento
+                        </a>
                     </li>
-                    
                 </ul>
             </div>
         </div>
