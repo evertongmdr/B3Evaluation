@@ -46,19 +46,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label">Duração total do investimento *</label>
-                        <div>
-                            <input class="form-control" id="investmentDuration" type="number"
-                                placeholder="Duração total do investimento em meses"
-                                formControlName="investmentDuration"
-                                [ngClass]="{'is-invalid': displayMessage['investmentDuration'] }" />
-                            <span class="text-danger" *ngIf="displayMessage['investmentDuration']">
-                                <p [innerHTML]="displayMessage['investmentDuration']"></p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label">Tipo de Produto Financeiro *</label>
                         <div>
                             <select class="form-control" formControlName="financialProductType">

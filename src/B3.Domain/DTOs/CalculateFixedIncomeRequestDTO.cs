@@ -26,10 +26,5 @@ namespace B3.Domain.DTOs
         /// Período de resgate do investimento em meses.
         /// </summary>
         public int RedemptionPeriod { get; set; }
-
-        /// <summary>
-        /// Duração total do investimento em meses.
-        /// </summary>
-        public int InvestmentDuration { get; set; }
     }
 }

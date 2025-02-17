@@ -46,6 +46,14 @@ export class CurrencyUtils {
         // Converte para número decimal
         return parseFloat(newValue);
     }
+
+    static formatToBRL(value: number | string | undefined): string {
+        if (value === undefined || value === null) return "R$ 0,00";
+        return Number(value).toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+      }
     
 
     

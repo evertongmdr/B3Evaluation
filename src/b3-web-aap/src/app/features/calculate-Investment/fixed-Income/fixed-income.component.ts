@@ -45,10 +45,6 @@ export class FixedIncomeComponent extends FormBaseComponent {
       redemptionPeriod: {
         required: 'Informe o Período de resgate',
       },
-      investmentDuration: {
-        required: 'Informe o Duração total do investimento',
-      },
-
       financialProductType: {
         required: 'Informe Produto financeiro  de investimento',
       },
@@ -66,9 +62,7 @@ export class FixedIncomeComponent extends FormBaseComponent {
       bankId: ['', [Validators.required]],
       financialProductType: ['', [Validators.required]],
       initialValue: ['', [Validators.required]],
-      redemptionPeriod: ['', [Validators.required]],
-      investmentDuration: ['', [Validators.required]],
-
+      redemptionPeriod: ['', [Validators.required]]
     });
 
     this.calculateFixedIncomeForm.patchValue({ bankId: '70916acf-a375-4b4d-8421-4b365301b0b0' });
@@ -86,10 +80,10 @@ export class FixedIncomeComponent extends FormBaseComponent {
   formatCalculationResultForDisplay(calculationResult: FixedIncomeCalculationResult | null) {
 
     return {
-      grossAmount: CurrencyUtils.formatToBRLCurrency(calculationResult?.grossAmount.toString()),
-      netAmount: CurrencyUtils.formatToBRLCurrency(calculationResult?.netAmount.toString()),
-      returnAmount: CurrencyUtils.formatToBRLCurrency(calculationResult?.returnAmount.toString()),
-      incomeTaxAmount: CurrencyUtils.formatToBRLCurrency(calculationResult?.incomeTaxAmount.toString())
+      grossAmount: CurrencyUtils.formatToBRL(calculationResult?.grossAmount),
+      netAmount: CurrencyUtils.formatToBRL(calculationResult?.netAmount),
+      returnAmount: CurrencyUtils.formatToBRL(calculationResult?.returnAmount),
+      incomeTaxAmount: CurrencyUtils.formatToBRL(calculationResult?.incomeTaxAmount)
     }
 
   }
@@ -98,7 +92,7 @@ export class FixedIncomeComponent extends FormBaseComponent {
 
     var calculateFixedIncome = {} as CalculateFixedIncome;
 
-    calculateFixedIncome = Object.assign({}, calculateFixedIncome, this.calculateFixedIncomeForm.value);
+    calculateFixedIncome = Object.assign({}, calculateFixedIncome, calculateFixedIncomeForm.value);
 
     calculateFixedIncome.financialProductType = StringUtils.stringToInt(this.calculateFixedIncomeForm.value.financialProductType);
     calculateFixedIncome.initialValue = CurrencyUtils.StringParaDecimal(this.calculateFixedIncomeForm.value.initialValue);

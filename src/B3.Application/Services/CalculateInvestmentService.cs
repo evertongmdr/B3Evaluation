@@ -66,7 +66,7 @@ namespace B3.Application.Services
             }
 
             var calculateFinancialResult = fixedIncomeCalculatorStrategy.CalculateFinancialDetails(request.InitialValue,
-                financialProduct.BaseRate, financialProduct.TB, request.InvestmentDuration);
+                financialProduct.BaseRate, financialProduct.TB, request.RedemptionPeriod);
 
             return calculateFinancialResult;
 

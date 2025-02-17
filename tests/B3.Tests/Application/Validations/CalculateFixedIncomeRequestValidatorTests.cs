@@ -21,9 +21,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.Empty,
                 InitialValue = 1000,
-                RedemptionPeriod = 6,
-                InvestmentDuration = 12
-
+                RedemptionPeriod = 6
             };
 
             //Act
@@ -47,8 +45,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 0,
-                RedemptionPeriod = 6,
-                InvestmentDuration=12
+                RedemptionPeriod = 6
             };
 
             //Act
@@ -72,8 +69,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 1000,
-                RedemptionPeriod = 1,
-                InvestmentDuration = 12
+                RedemptionPeriod = 1
             };
 
             //Act
@@ -88,32 +84,6 @@ namespace B3.Tests.Application.Validations
 
         }
 
-
-        [Fact(DisplayName = "Teste que verifica se, quando o número de meses para a duração total do investimento não é maior que 0, " +
-        "o retorno é inválido com message de erro")]
-        public void CalculateFixedIncomeRequestValidator_InvestmentDurationGreaterThanZero_ReturnInvalidWithErrorMessage()
-        {
-            // Arrange
-            var calculateFixedIncomeRequest = new CalculateFixedIncomeRequestDTO
-            {
-                BankId = Guid.NewGuid(),
-                InitialValue = 1000,
-                RedemptionPeriod = 6,
-                InvestmentDuration = 0
-            };
-
-            //Act
-
-            var validationResult = _validator.Validate(calculateFixedIncomeRequest);
-
-            //Asert
-
-            Assert.False(validationResult.IsValid);
-            Assert.Single(validationResult.Errors);
-            Assert.Equal("O número de meses para a duração total do investimento deve ser maior que 0", validationResult.Errors.First().ErrorMessage);
-
-        }
-
         [Fact(DisplayName = "Teste que verifica se, quando a entrada é válida, " +
             "o retorno é válido sem message de erro")]
         public void CalculateFixedIncomeRequestValidator_ValidInput_ReturnsValidWithoutErrorMessage()
@@ -123,8 +93,7 @@ namespace B3.Tests.Application.Validations
             {
                 BankId = Guid.NewGuid(),
                 InitialValue = 1000,
-                RedemptionPeriod = 6,
-                InvestmentDuration= 12
+                RedemptionPeriod = 12,
             };
 
             //Act
